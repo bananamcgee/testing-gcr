@@ -8,6 +8,5 @@ COPY ./entrypoint.sh .
 COPY ./source-code .
 
 RUN chmod +x ./entrypoint.sh
-RUN chmod +x ./source-code/__init__.py
 
 ENTRYPOINT ["/entrypoint.sh"]
