@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/app/__init__.py
+py /app/__init__.py
