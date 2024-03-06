@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login
+      run: 
+        docker login --username bananamcgee --password ${{ secrets.GH_PAT }} ghcr.io 
+    - uses: actions/checkout@v3
+    - name: Build image
+      run: 
+        docker build . -t ghcr.io/bananamcgee/helloword-ghcr:latest 
+    - uses: actions/checkout@v3
+    - name: Push image
+      run: 
+        docker push ghcr.io/bananamcgee/helloword-ghcr:latest 
