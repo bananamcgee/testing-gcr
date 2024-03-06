@@ -4,7 +4,7 @@ RUN apk add --no-cache bash
 
 WORKDIR /app
 
-COPY entrypoint.sh .
+COPY ./entrypoint.sh .
 COPY ./source-code .
 
 RUN chmod +x /entrypoint.sh
