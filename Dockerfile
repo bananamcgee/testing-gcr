@@ -2,11 +2,12 @@ FROM alpine
 
 RUN apk add --no-cache bash
 
-WORKDIR /app
-
+WORKDIR /
 
 COPY entrypoint.sh .
+COPY app
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x /entrypoint.sh
+RUN chmod +x /app/__init__.py
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
