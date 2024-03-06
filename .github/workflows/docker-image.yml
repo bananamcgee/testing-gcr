@@ -17,8 +17,6 @@ jobs:
     - name: Login
       run: 
         docker login --username bananamcgee --password ${{ secrets.GH_PAT }} ghcr.io 
-        docker build . -t ghcr.io/bananamcgee/helloword-ghcr:latest 
-        docker push ghcr.io/bananamcgee/helloword-ghcr:latest 
     - uses: actions/checkout@v3
     - name: Build image
       run: 
