@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello world"
+py /app/__init__.py
